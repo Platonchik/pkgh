@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ParseRasp</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="textView">New Text</string>
+    <string name="buttonSrch">New Button</string>
+    <string name="buttonSrch1">Найти</string>
+    <string name="group">Группа</string>
+    <string name="textView3">Large Text</string>
+</resources>
