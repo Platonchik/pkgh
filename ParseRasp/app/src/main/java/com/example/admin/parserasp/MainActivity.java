@@ -11,7 +11,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,26 +24,27 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends SearchGroup {
 
-    private TextView textview1;
+    //private TextView textview1;
     protected TextView textview2;
     mytask mt = new mytask();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) { //checks if its lower than Honeycomb
-            android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-            actionBar.hide();
-        }
         setContentView(R.layout.activity_main);
 
-        textview1 = (TextView)findViewById(R.id.textView1);
-        textview2 = (TextView)findViewById(R.id.textview2);
         Button button1 = (Button) findViewById(R.id.button1);
+        //ListView listView = (ListView)findViewById(R.id.listView);
 
-        textview1.setText(getIntent().getStringExtra("nameGroup"));
+        //ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
+        //listView.setAdapter(adapter);
+        //textview1 = (TextView)findViewById(R.id.textView1);
+        textview2 = (TextView)findViewById(R.id.textView2);
+
+
+        //textview1.setText(getIntent().getStringExtra("nameGroup"));
         textview2.setText(getIntent().getStringExtra("group"));
     }
     @Override
@@ -69,7 +72,7 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-        public void Click(View view) {
+    public void Click(View view) {
 
             mt.execute();
         }
@@ -96,7 +99,7 @@ public class MainActivity extends ActionBarActivity {
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
-            textview1.setText(raspElement);
+            //textview1.setText(raspElement);
         }
 
     }
